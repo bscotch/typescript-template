@@ -38,6 +38,17 @@ Assumptions:
 
 ### Preparing a new project
 
+#### The easy way to start: GitHub Templates
+
+[This project](https://github.com/bscotch/typescript-template) is set up as a GitHub template.
+
+1. Click the "Use this Template" button on the project homepage to create your own
+  remote repo with everything here. Follow the prompts.
+2. On your local machine, navigate to the parent folder where you want to keep your
+  local repo copy. Run `git clone your-remote-url`.
+
+#### The hard way to start
+
 1. Create a new remote repo on your host (e.g. GitHub, BitBucket, GitLab, etc.)
 1. Go to the local parent folder into which you want to put your new Typescript project
     (via your file explorer or a terminal)
@@ -48,8 +59,10 @@ Assumptions:
   1. Delete the `.git` folder
   1. Run `git init` (or use a Git GUI to initialize the repo)
   1. Run `git checkout -b develop`
-  1. After your first commit, run `git branch main` to create your `main` branch.
 1. Change the remote to your own remote repository: `git remote set-url origin your-remote-url` (or, if you initialized a new repo, add your remote with `git remote add origin your-remote-url`)
+
+#### Customize the template
+
 1. Run `npm install` to install all dependencies
   1. (Optional) Run `npm update` to get those dependencies up to date with minor updates.
   1. (Optional) Run `npm outdated` to see if any dependencies have major updates.
@@ -66,6 +79,7 @@ Assumptions:
 1. Remove any stuff from the template that you don't care about. (You can do this at any time.)
 1. Commit all your changes: `git add -A; git commit`
 1. Push your commit: `git push -u origin develop` (the `-u` lets you just run `git push` without the other arguments from here on)
+1. Make sure you have a `main` branch if you are going to use the versioning commands: `git branch main`
 
 
 ### Begin coding!
