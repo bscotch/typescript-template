@@ -25,7 +25,9 @@
     "tsc-live": "npx tsc -w"
   },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "commander": "^6.1.0"
+  },
   "devDependencies": {
     "@types/chai": "^4.2.12",
     "@types/fs-extra": "^9.0.1",

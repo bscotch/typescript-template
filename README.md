@@ -1,4 +1,4 @@
-# Typescript Template
+# Typescript Template (Typescript Starter Project)
 
 Getting a Typescript project running
 is a pain, since there is a lot of environment and configuration setup
@@ -63,6 +63,7 @@ Assumptions:
   + Remove the `private` field **if you want to publish to npm**.
   + If you do not want to publish to npm, remove `&& npm publish` from the `scripts.postversion` script.
 1. Check the `.gitignore` and add any filetypes or folders you want to keep out of your repo.
+1. Remove any stuff from the template that you don't care about. (You can do this at any time.)
 1. Commit all your changes: `git add -A; git commit`
 1. Push your commit: `git push -u origin develop` (the `-u` lets you just run `git push` without the other arguments from here on)
 
@@ -83,6 +84,39 @@ Assumptions:
     That gives you access to types specific to the browser.
   + If you are getting typescript errors from dependencies, set `skipLibCheck` to `true`.
 + Your compiled code will appear in a git-ignored `build` folder, with entrypoint `build/index.js`.
+
+### Creating a CLI (Command Line Interface)
+
+This template project comes with the [commander module](https://www.npmjs.com/package/commander),
+which is great for rapidly building command line interfaces
+(uninstall it with `npm uninstall commander` if you don't need to make a CLI).
+
+To create a CLI that will become available when someone installs your npm package:
+
++ Rename `src/cli/cli.ts` to `src/cli/your-main-cli-name.ts`. This is the entrypoint
+  for your CLI. If it is simple you could do everything here.
++ Name any subcommand files to `src/cli/your-main-cli-name-subcommand.ts`.
+  Update the CLI entrypoint to use the same subcommand names.
+  Subcommand scripts *must* start with the same name as your main CLI script,
+  and *must* end with an exact command name listed by its parent script
+  (one of the `cli.command()` values).
++ Modify the CLI templates to do whatever it's all supposed to do.
++ To make `your-cli-command` available to users who install your
+  npm package, add the `bin` field to your `package.json`, like so:
+  ```jsonc
+  {
+    //... other root package.json options
+    "bin":{
+      "your-cli-command": "build/cli/your-main-cli-name.js"
+    }
+  }
+  ```
+
+Test your CLI locally by running `node build/cli/your-main-cli-name.js -h`.
+
+If you publish your project as an npm module, users who install it will be able
+to run `npx your-cli-command` in their terminals, or simply `your-cli-command`
+if they've done a global install of your module (with `npm install --global your-module-name`).
 
 ### Testing
 
