@@ -1,2 +1,2 @@
 # Prevent the cli scripts from being detected as javascript due to the shebang line
-./cli/**/*.ts linguist-language=Typescript
+*.ts linguist-language=Typescript
