@@ -1,2 +1,2 @@
-# Prevent your eslint file from impacting GitHub's language-percentage meter
-.eslintrc.js -linguist-documentation
+# Prevent the cli scripts from being detected as javascript due to the shebang line
+./cli/**/*.ts linguist-language=Typescript
