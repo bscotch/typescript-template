@@ -1,0 +1,2 @@
+# Prevent your eslint file from impacting GitHub's language-percentage meter
+.eslintrc.js linguist-documentation
