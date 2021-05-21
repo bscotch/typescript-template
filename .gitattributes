@@ -2,3 +2,4 @@
 # (There seems to be no way to prevent language detection from
 # falsely calling the CLI commands Javascript due to the shebang line)
 .eslintrc.js linguist-documentation
+prettier.config.js linguist-documentation
