@@ -17,12 +17,12 @@
     "build/types/**/*"
   ],
   "scripts": {
-    "test": "mocha --inspect --require source-map-support/register --bail ./build/test/index.js",
-    "build": "npx rimraf build && npx tsc",
-    "preversion": "git checkout develop && npm run build && npm test",
-    "version": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add -A",
-    "postversion": "git push origin develop && git checkout main && git merge develop && git push origin main --follow-tags && npm publish && git checkout develop",
-    "tsc-live": "npx tsc -w"
+    "test": "npm run build && mocha --inspect --require source-map-support/register --bail ./build/test/",
+    "build": "rimraf build && tsc && tsc-alias",
+    "preversion": "npm run build && npm test",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add -A",
+    "postversion": "git push --follow-tags && npm publish",
+    "tsc-live": "tsc -w && tsc-alias -w"
   },
   "license": "MIT",
   "dependencies": {
@@ -44,6 +44,7 @@
     "rimraf": "^3.0.2",
     "source-map-support": "^0.5.19",
     "ts-node": "^9.1.1",
+    "tsc-alias": "^1.2.11",
     "typescript": "^4.2.4"
   }
 }
