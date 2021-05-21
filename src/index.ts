@@ -7,5 +7,5 @@
  * For small projects you could put all your code right in this file.
  */
 
-export * from './lib/sample-module';
+export * from './lib/sample-module.js';
 export default undefined;
