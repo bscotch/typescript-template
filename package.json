@@ -20,9 +20,11 @@
   "scripts": {
     "test": "npm run build && mocha --inspect --require source-map-support/register --bail ./build/test/",
     "build": "rimraf build && tsc && tsc-alias",
-    "preversion": "npm run build && npm test",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add -A",
+    "preversion": "npm run lint && npm run build && npm test",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && npm run format && git add -A",
     "postversion": "git push --follow-tags && npm publish",
+    "lint": "eslint --ext ts,js --fix src",
+    "format": "prettier src/**/*.ts -w",
     "tsc-live": "tsc -w && tsc-alias -w"
   },
   "license": "MIT",
@@ -39,6 +41,7 @@
     "chai": "^4.3.4",
     "conventional-changelog-cli": "^2.1.1",
     "eslint": "^7.26.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "fs-extra": "^10.0.0",
     "mocha": "^8.4.0",
     "prettier": "^2.3.0",
