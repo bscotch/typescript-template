@@ -1,0 +1,18 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
+  "recommendations": [
+    // For ESLint
+    "dbaeumer.vscode-eslint",
+    // For bleeding edge Typescript features
+    "ms-vscode.vscode-typescript-next",
+    // For better editing of the README and other markdown files
+    "yzhang.markdown-all-in-one",
+    // For auto-completes when typing out paths
+    "christian-kohler.path-intellisense",
+    // For auto-formatting
+    "esbenp.prettier-vscode",
+    // For support editing any YAML config or other files
+    "redhat.vscode-yaml"
+  ],
+  "unwantedRecommendations": []
+}
