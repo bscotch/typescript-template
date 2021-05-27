@@ -127,8 +127,6 @@ if they've done a global install of your module (with `npm install --global your
 - Place any reference data for tests into `./samples`
 - Run tests from the terminal with `npm test` (make sure your code is compiled first).
 - Run tests from VSCode (click the debugger on the sidebar) to use breakpoints and allow inspection:
-  - Use the "Tests (ts-node)" option to run your tests without having to first compile.
-    This is the best default option, since it prevents you from running tests against old compiled code.
   - Use the "Tests" option to run against your compiled code.
   - Console logs will appear in the Debug Console, where you can also step through your code if you set breakpoints.
   - Edit `./.vscode/launch.json` to add or change the tests.
