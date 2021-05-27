@@ -1,4 +1,4 @@
-# Typescript Template (Typescript Starter Project) for Node Modules
+# Typescript Template (Typescript Starter Project) for Node Modules and CLIs
 
 - 🚀 Start coding immediately, without worrying about configuration
 - 📰 Publish your package to NPM with only a few tweaks
@@ -7,7 +7,6 @@
 - 💻 Deliver a Command Line Interface version of your project
 - ✨ Auto-format your code with Prettier
 - 🔬 Find issues with ESLint
-- 🚢 Properly set up for ESM-style imports in Node
 - ⚡ Includes Visual Studio Code extension recommendations and default settings, for maximum productivity out of the box
 
 Getting a Typescript project running
@@ -25,8 +24,7 @@ Typescript project for Node packages.
 ## ⚠ Caveats ⚠
 
 - This template is for Node, not Browser, projects.
-- Compiled projects will only work in Node v13.2+ because older versions do not support ECMAScript Modules syntax. With the `--experimental-modules` runtime flag your compiled project could work down to Node 12.
-- To support Node versions <14 you'll likely need to change the `tsconfig.json` target settings.
+- To support Node versions <14 you may need to change the `tsconfig.json` target settings.
 
 ## Setup Guide
 
